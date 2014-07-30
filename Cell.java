@@ -10,8 +10,8 @@ class Cell {
 
         int carbon_price = 3;
         int nitrogen_price = 10;
-        int sulphur_price = 15;
-        int phosphorous_price = 20;
+        int sulphur_price = 10;
+        int phosphorous_price = 10;
 
         int energy = 0;
         int time_count = 0; 
@@ -37,5 +37,10 @@ class Cell {
             energy = energy - ( carbon_desired * carbon_price );
             carbon_current = carbon_current + carbon_desired;
             return new int[] { energy, carbon_current };
+        }
+
+        int[] buyResource( int energy, int resource_current, int resource_desired, int resource_price ) {
+            energy = energy - ( resource_desired * resource_price );
+            resource_current = resource_current + resource_desired;
         }
 }
