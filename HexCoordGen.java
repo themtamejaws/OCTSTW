@@ -19,7 +19,7 @@ class HexCoordGen {
                             record[hex_count][0]=x;
                             record[hex_count][1]=y;
                             record[hex_count][2]=z;
-                            record[hex_count][3]=ring;
+                            record[hex_count][3]=hex_count;
                             hex_count=hex_count+1;
                     }
                 }
