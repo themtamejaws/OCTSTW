@@ -24,5 +24,6 @@ class Hex {
         System.out.println( " position in x: " + position[0] );
         System.out.println( " position in y: " + position[1] );
         System.out.println( " position in z: " + position[2] );
+        System.out.println( " ring number (from loop): " + position[3] );
     }
 }
