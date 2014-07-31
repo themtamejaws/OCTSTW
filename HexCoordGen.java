@@ -1,9 +1,11 @@
 class HexCoordGen {
     public static int[] coords( int rings, int hex_number ) {
+	
+	//Generates Hex coordinates inputs; number of rings and maybe hex_number
 
         int hex_count = 0;
 
-        int[][] record = new int [10000][4];
+        int[][] record = new int [10000][4]; //record of the values of the hex coords
 
         for (int ring = 0; ring <= rings; ring++) {
             
@@ -24,6 +26,6 @@ class HexCoordGen {
             }
         }
         int[] position = record[hex_number];
-        return position;
+        return position; //returns the position of a hex in HexMain
     }
 }

@@ -2,7 +2,10 @@ import java.util.*;
 
 class HexMain {
     public static void main(String[] args) {
-        List<Hex> boardHexList;
+        
+	//Calls the various classes to generate the board
+	
+	List<Hex> boardHexList;
 
         boardHexList = new ArrayList<Hex>();
 

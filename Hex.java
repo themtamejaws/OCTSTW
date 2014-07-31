@@ -2,19 +2,19 @@ import java.util.Random;
 
 class Hex {
     int nitrogen = randInt(0, 3);
-    int sulphur = randInt(0, 2);
+    int sulphur = randInt(0, 2); 
     int phosphorous = randInt(0, 1);
     int[] position;
 
     public static int randInt(int min, int max) {
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
-        return randomNum;
+        return randomNum; //generates the random numbers for the resources
     }
 
     public static int[] hexNumber( int hex_number) {
         int[] position = HexCoordGen.coords( 9, hex_number );
-        return position;
+        return position; //generates the coordinates for each hex
     }
 
     void printValues() {
