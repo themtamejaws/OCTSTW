@@ -1,5 +1,7 @@
 class Cell {
 	//instantiates an Cell object
+        int[] position = {0,0,0};    
+
         int blue_abs = 0;
         int green_abs = 1;
         int red_abs = 0;
@@ -43,5 +45,21 @@ class Cell {
         int[] buyResource( int energy, int resource_current, int resource_desired, int resource_price ) {
             energy = energy - ( resource_desired * resource_price );
             resource_current = resource_current + resource_desired; //buy resource
+            resource_current = resource_current + resource_desired;
+            return new int[] { energy, resource_current };
+        }
+
+        int[] changePosition( int[] initial_position, int direction ) {
+            int[][] neighbours ={{1,0,-1},{1,-1,0},{0,-1,1},{-1,0,1},{-1,1,0},{0,1,-1}};
+
+            int[] movement = neighbours[direction];
+
+            int[] new_position = new int[3];
+            for (int i = 0; i < 3; ++i) {
+                new_position[i] = initial_position[i] + movement[i];
+            }
+
+            return new_position;
+>>>>>>> upstream/master
         }
 }

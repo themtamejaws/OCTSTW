@@ -2,6 +2,10 @@ class CellMain {
     public static void main(String[] args) {
         Cell cell_1 = new Cell();
         
+        cell_1.position = cell_1.changePosition( cell_1.position, 2);
+
+        System.out.println( "The cell's new position is: " + cell_1.position[0] + "," + cell_1.position[1] + "," + cell_1.position[2] + "...");
+
         for (int i = 0; i < 9; i++) {
             cell_1.time_count++; 
             cell_1.blue_abs = cell_1.updateAbsorbtion( cell_1.blue_abs, 1 );
