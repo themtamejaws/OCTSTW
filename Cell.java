@@ -60,6 +60,6 @@ class Cell {
             }
 
             return new_position;
->>>>>>> upstream/master
+
         }
 }
