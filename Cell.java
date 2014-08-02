@@ -1,6 +1,11 @@
+import java.util.*;
+
 class Cell {
 	//instantiates an Cell object
         int[] position = {0,0,0};    
+    	ArrayList<String> possible_genes = new ArrayList<String>();
+        
+    	ArrayList<String> current_genes = new ArrayList<String>();
 
         int blue_abs = 0;
         int green_abs = 1;
@@ -18,6 +23,10 @@ class Cell {
 
         int energy = 0;
         int time_count = 0; 
+
+        Cell() {
+            possible_genes.add("red_absorption1");
+        }
 
         int updateEnergy( int energy, int blue, int green, int red) {
             energy = energy + blue + green + red;
@@ -60,6 +69,19 @@ class Cell {
             }
 
             return new_position;
+	    }
+    	
+        public List<ArrayList<String>> buy_gene( String gene_to_buy, ArrayList<String> possible_genes, ArrayList<String> current_genes){
+
+            current_genes.add(gene_to_buy);
+            possible_genes.remove(gene_to_buy);
+                
+            List<ArrayList<String>> result = new ArrayList<ArrayList<String>>(); 
+            result.add(possible_genes);
+            result.add(current_genes);
+            return result;
 
         }
+	
+
 }

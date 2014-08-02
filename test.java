@@ -21,7 +21,7 @@ public class test{
 	}
 
 	public void addRecords(){
-		x.format("%s", "hello");
+		x.format(testArray);
 	}
 
 	public void closeFile(){

@@ -1,16 +1,34 @@
+import java.util.*;
+
 class CellMain {
     public static void main(String[] args) {
         Cell cell_1 = new Cell();
         
         cell_1.position = cell_1.changePosition( cell_1.position, 2);
 
-        System.out.println( "The cell's new position is: " + cell_1.position[0] + "," + cell_1.position[1] + "," + cell_1.position[2] + "...");
+        System.out.println( "The cell's new position is: " + cell_1.position[0]
+            + "," + cell_1.position[1] + "," + cell_1.position[2] + "...");
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 3; i++) {
             cell_1.time_count++; 
             cell_1.blue_abs = cell_1.updateAbsorbtion( cell_1.blue_abs, 1 );
             cell_1.energy = cell_1.updateEnergy( cell_1.energy, cell_1.blue_abs, cell_1.green_abs, cell_1.red_abs );
-            if (cell_1.energy > 6) {
+            System.out.println("Do you want to buy a gene?");
+            String response = Input.readline();
+            
+            if (response == "yes"){
+                for (int j = 0; j < cell_1.possible_genes.size(); j++){
+                    System.out.println(cell_1.possible_genes.get(j));
+                }
+                String gene = Input.readline();
+                List<ArrayList<String>> unpack = cell_1.buy_gene( gene, cell_1.possible_genes, cell_1.current_genes);
+                cell_1.possible_genes = unpack.get(0);
+                cell_1.current_genes = unpack.get(1);
+            }
+
+
+
+	         if (cell_1.energy > 6) {
                 int[] temp = cell_1.buyCarbon( cell_1.energy, cell_1.carbon, 1, cell_1.carbon_price);
                 System.out.println( "Bought 1 carbon for a total of:" + cell_1.carbon );
                 cell_1.energy = temp[0];
