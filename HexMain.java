@@ -15,6 +15,8 @@ class HexMain {
             boardHexList.add(freshHex);
         }
 
+        int[][] hello = boardHexList.get(0).neighbourCount( boardHexList.get(0).position);
+
         boardHexList.get(0).printValues();
         boardHexList.get(1).printValues();
         boardHexList.get(2).printValues();
